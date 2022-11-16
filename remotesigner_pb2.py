@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='remotesigner',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x12remotesigner.proto\x12\x0cremotesigner\"\x1e\n\x0bPingRequest\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1c\n\tPingReply\x12\x0f\n\x07message\x18\x01 \x01(\t\"\xac\x01\n\x0bInitRequest\x12-\n\x0bnode_config\x18\x01 \x01(\x0b\x32\x18.remotesigner.NodeConfig\x12.\n\x0b\x63hainparams\x18\x02 \x01(\x0b\x32\x19.remotesigner.ChainParams\x12\x11\n\tcoldstart\x18\x03 \x01(\x08\x12+\n\nhsm_secret\x18\x64 \x01(\x0b\x32\x17.remotesigner.BIP32Seed\"2\n\tInitReply\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\"<\n\x13GetExtPubKeyRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\":\n\x11GetExtPubKeyReply\x12%\n\x04xpub\x18\x01 \x01(\x0b\x32\x17.remotesigner.ExtPubKey\"m\n\x11NewChannelRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\"D\n\x0fNewChannelReply\x12\x31\n\rchannel_nonce\x18\x01 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\"\xba\x03\n\x13ReadyChannelRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x13\n\x0bis_outbound\x18\x03 \x01(\x08\x12\x19\n\x11\x63hannel_value_sat\x18\x04 \x01(\x04\x12\x17\n\x0fpush_value_msat\x18\x05 \x01(\x04\x12\x30\n\x10\x66unding_outpoint\x18\x06 \x01(\x0b\x32\x16.remotesigner.Outpoint\x12\x1b\n\x13local_to_self_delay\x18\x07 \x01(\r\x12\x1d\n\x15local_shutdown_script\x18\x08 \x01(\x0c\x12\x33\n\x11remote_basepoints\x18\t \x01(\x0b\x32\x18.remotesigner.Basepoints\x12\x1c\n\x14remote_to_self_delay\x18\n \x01(\r\x12\x1e\n\x16remote_shutdown_script\x18\x0b \x01(\x0c\x12\x1f\n\x17option_static_remotekey\x18\x0c \x01(\x08\"\x13\n\x11ReadyChannelReply\"\x9b\x01\n\x18SignMutualCloseTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\"C\n\x0eSignatureReply\x12\x31\n\tsignature\x18\x01 \x01(\x0b\x32\x1e.remotesigner.BitcoinSignature\"\xa8\x01\n\x18\x43heckFutureSecretRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\t\n\x01n\x18\x03 \x01(\x04\x12\'\n\tsuggested\x18\x04 \x01(\x0b\x32\x14.remotesigner.Secret\")\n\x16\x43heckFutureSecretReply\x12\x0f\n\x07\x63orrect\x18\x01 \x01(\x08\"w\n\x1bGetChannelBasepointsRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\"I\n\x19GetChannelBasepointsReply\x12,\n\nbasepoints\x18\x01 \x01(\x0b\x32\x18.remotesigner.Basepoints\"\x83\x01\n\x1cGetPerCommitmentPointRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\t\n\x01n\x18\x03 \x01(\x04\"z\n\x1aGetPerCommitmentPointReply\x12\x32\n\x14per_commitment_point\x18\x01 \x01(\x0b\x32\x14.remotesigner.PubKey\x12(\n\nold_secret\x18\x02 \x01(\x0b\x32\x14.remotesigner.Secret\"\x97\x01\n\x14SignFundingTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\">\n\x12SignFundingTxReply\x12(\n\twitnesses\x18\x01 \x03(\x0b\x32\x15.remotesigner.Witness\"\xd7\x01\n\x1dSignRemoteCommitmentTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x35\n\x17remote_per_commit_point\x18\x03 \x01(\x0b\x32\x14.remotesigner.PubKey\x12%\n\x02tx\x18\x04 \x01(\x0b\x32\x19.remotesigner.Transaction\"\x9a\x01\n\x17SignCommitmentTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\"\xd4\x01\n\x16SignLocalHTLCTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\x12\t\n\x01n\x18\x04 \x01(\x04\x12.\n\x10per_commit_point\x18\x05 \x01(\x0b\x32\x14.remotesigner.PubKey\"\xab\x01\n\x1dSignDelayedPaymentToUsRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\x12\t\n\x01n\x18\x04 \x01(\x04\"\xe0\x01\n\x17SignRemoteHTLCTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\x12\r\n\x05input\x18\x04 \x01(\r\x12\x35\n\x17remote_per_commit_point\x18\x05 \x01(\x0b\x32\x14.remotesigner.PubKey\"\xe2\x01\n\x19SignRemoteHTLCToUsRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\x12\r\n\x05input\x18\x04 \x01(\r\x12\x35\n\x17remote_per_commit_point\x18\x05 \x01(\x0b\x32\x14.remotesigner.PubKey\"\xd9\x01\n\x16SignPenaltyToUsRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\x12\r\n\x05input\x18\x04 \x01(\r\x12/\n\x11revocation_secret\x18\x05 \x01(\x0b\x32\x14.remotesigner.Secret\"\x98\x01\n\x1eSignChannelAnnouncementRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x1c\n\x14\x63hannel_announcement\x18\x03 \x01(\x0c\"\x8d\x01\n\x1cSignChannelAnnouncementReply\x12\x34\n\x0enode_signature\x18\x01 \x01(\x0b\x32\x1c.remotesigner.ECDSASignature\x12\x37\n\x11\x62itcoin_signature\x18\x02 \x01(\x0b\x32\x1c.remotesigner.ECDSASignature\"_\n\x1bSignNodeAnnouncementRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x19\n\x11node_announcement\x18\x02 \x01(\x0c\"E\n\x12NodeSignatureReply\x12/\n\tsignature\x18\x01 \x01(\x0b\x32\x1c.remotesigner.ECDSASignature\"Y\n\x18SignChannelUpdateRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x16\n\x0e\x63hannel_update\x18\x02 \x01(\x0c\"Y\n\x0b\x45\x43\x44HRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12#\n\x05point\x18\x02 \x01(\x0b\x32\x14.remotesigner.PubKey\"8\n\tECDHReply\x12+\n\rshared_secret\x18\x01 \x01(\x0b\x32\x14.remotesigner.Secret\"k\n\x12SignInvoiceRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x11\n\tdata_part\x18\x02 \x01(\x0c\x12\x1b\n\x13human_readable_part\x18\x03 \x01(\t\"[\n\x1dRecoverableNodeSignatureReply\x12:\n\tsignature\x18\x01 \x01(\x0b\x32\'.remotesigner.ECDSARecoverableSignature\"L\n\x12SignMessageRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x0f\n\x07message\x18\x02 \x01(\x0c\"\x10\n\x0eVersionRequest\"\x7f\n\x0cVersionReply\x12\x16\n\x0eversion_string\x18\x01 \x01(\t\x12\r\n\x05major\x18\x02 \x01(\r\x12\r\n\x05minor\x18\x03 \x01(\r\x12\r\n\x05patch\x18\x04 \x01(\r\x12\x12\n\nprerelease\x18\x05 \x01(\t\x12\x16\n\x0e\x62uild_metadata\x18\x06 \x01(\t\"\x8f\x01\n\nNodeConfig\x12I\n\x14key_derivation_style\x18\x01 \x01(\x0e\x32+.remotesigner.NodeConfig.KeyDerivationStyle\"6\n\x12KeyDerivationStyle\x12\x0b\n\x07INVALID\x10\x00\x12\n\n\x06NATIVE\x10\x01\x12\x07\n\x03LND\x10\x02\"#\n\x0b\x43hainParams\x12\x14\n\x0cnetwork_name\x18\x01 \x01(\t\"\x16\n\x06NodeId\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x1c\n\x0c\x43hannelNonce\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x16\n\x06PubKey\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x16\n\x06Secret\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x19\n\tBIP32Seed\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x8d\x01\n\x0bTransaction\x12\x14\n\x0craw_tx_bytes\x18\x01 \x01(\x0c\x12\x32\n\x0binput_descs\x18\x02 \x03(\x0b\x32\x1d.remotesigner.InputDescriptor\x12\x34\n\x0coutput_descs\x18\x03 \x03(\x0b\x32\x1e.remotesigner.OutputDescriptor\"\xde\x01\n\nBasepoints\x12(\n\nrevocation\x18\x01 \x01(\x0b\x32\x14.remotesigner.PubKey\x12%\n\x07payment\x18\x02 \x01(\x0b\x32\x14.remotesigner.PubKey\x12\"\n\x04htlc\x18\x03 \x01(\x0b\x32\x14.remotesigner.PubKey\x12-\n\x0f\x64\x65layed_payment\x18\x04 \x01(\x0b\x32\x14.remotesigner.PubKey\x12,\n\x0e\x66unding_pubkey\x18\x05 \x01(\x0b\x32\x14.remotesigner.PubKey\"\x1e\n\x0e\x45\x43\x44SASignature\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\")\n\x19\x45\x43\x44SARecoverableSignature\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\" \n\x10\x42itcoinSignature\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x1c\n\tExtPubKey\x12\x0f\n\x07\x65ncoded\x18\x01 \x01(\t\"\x1f\n\nKeyLocator\x12\x11\n\tkey_index\x18\x02 \x01(\x05\"-\n\x05TxOut\x12\x11\n\tvalue_sat\x18\x01 \x01(\x03\x12\x11\n\tpk_script\x18\x02 \x01(\x0c\"x\n\x13UnilateralCloseInfo\x12\x31\n\rchannel_nonce\x18\x01 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12.\n\x10\x63ommitment_point\x18\x02 \x01(\x0b\x32\x14.remotesigner.PubKey\"\xe1\x01\n\x0fInputDescriptor\x12)\n\x07key_loc\x18\x01 \x01(\x0b\x32\x18.remotesigner.KeyLocator\x12(\n\x0bprev_output\x18\x02 \x01(\x0b\x32\x13.remotesigner.TxOut\x12+\n\nspend_type\x18\x03 \x01(\x0e\x32\x17.remotesigner.SpendType\x12\x35\n\nclose_info\x18\x04 \x01(\x0b\x32!.remotesigner.UnilateralCloseInfo\x12\x15\n\rredeem_script\x18\x05 \x01(\x0c\"P\n\x10OutputDescriptor\x12)\n\x07key_loc\x18\x01 \x01(\x0b\x32\x18.remotesigner.KeyLocator\x12\x11\n\twitscript\x18\x02 \x01(\x0c\"b\n\x07Witness\x12\x31\n\tsignature\x18\x01 \x01(\x0b\x32\x1e.remotesigner.BitcoinSignature\x12$\n\x06pubkey\x18\x02 \x01(\x0b\x32\x14.remotesigner.PubKey\"\xb6\x01\n#SignRemoteCommitmentTxPhase2Request\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x35\n\x0f\x63ommitment_info\x18\x04 \x01(\x0b\x32\x1c.remotesigner.CommitmentInfo\"\xb5\x01\n\"SignLocalCommitmentTxPhase2Request\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x35\n\x0f\x63ommitment_info\x18\x04 \x01(\x0b\x32\x1c.remotesigner.CommitmentInfo\"\x88\x01\n\x1a\x43ommitmentTxSignatureReply\x12\x31\n\tsignature\x18\x01 \x01(\x0b\x32\x1e.remotesigner.BitcoinSignature\x12\x37\n\x0fhtlc_signatures\x18\x02 \x03(\x0b\x32\x1e.remotesigner.BitcoinSignature\"\xd3\x01\n\x1eSignMutualCloseTxPhase2Request\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x1a\n\x12to_local_value_sat\x18\x03 \x01(\x04\x12\x1b\n\x13to_remote_value_sat\x18\x04 \x01(\x04\x12\x1e\n\x16remote_shutdown_script\x18\x05 \x01(\x0c\"J\n\x15\x43loseTxSignatureReply\x12\x31\n\tsignature\x18\x01 \x01(\x0b\x32\x1e.remotesigner.BitcoinSignature\"H\n\x08HTLCInfo\x12\x11\n\tvalue_sat\x18\x01 \x01(\x04\x12\x14\n\x0cpayment_hash\x18\x02 \x01(\x0c\x12\x13\n\x0b\x63ltv_expiry\x18\x03 \x01(\r\"\x83\x02\n\x0e\x43ommitmentInfo\x12\x1a\n\x12\x66\x65\x65rate_sat_per_kw\x18\x01 \x01(\r\x12\t\n\x01n\x18\x02 \x01(\x04\x12\x1a\n\x12to_local_value_sat\x18\x04 \x01(\x04\x12\x1b\n\x13to_remote_value_sat\x18\x05 \x01(\x04\x12\x32\n\x14per_commitment_point\x18\x06 \x01(\x0b\x32\x14.remotesigner.PubKey\x12-\n\roffered_htlcs\x18\n \x03(\x0b\x32\x16.remotesigner.HTLCInfo\x12.\n\x0ereceived_htlcs\x18\x0b \x03(\x0b\x32\x16.remotesigner.HTLCInfo\"\'\n\x08Outpoint\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\x12\r\n\x05index\x18\x02 \x01(\r*@\n\tSpendType\x12\x0b\n\x07INVALID\x10\x00\x12\t\n\x05P2PKH\x10\x01\x12\n\n\x06P2WPKH\x10\x03\x12\x0f\n\x0bP2SH_P2WPKH\x10\x04\x32\x84\x13\n\x06Signer\x12:\n\x04Ping\x12\x19.remotesigner.PingRequest\x1a\x17.remotesigner.PingReply\x12:\n\x04Init\x12\x19.remotesigner.InitRequest\x1a\x17.remotesigner.InitReply\x12R\n\x0cGetExtPubKey\x12!.remotesigner.GetExtPubKeyRequest\x1a\x1f.remotesigner.GetExtPubKeyReply\x12L\n\nNewChannel\x12\x1f.remotesigner.NewChannelRequest\x1a\x1d.remotesigner.NewChannelReply\x12R\n\x0cReadyChannel\x12!.remotesigner.ReadyChannelRequest\x1a\x1f.remotesigner.ReadyChannelReply\x12Y\n\x11SignMutualCloseTx\x12&.remotesigner.SignMutualCloseTxRequest\x1a\x1c.remotesigner.SignatureReply\x12l\n\x17SignMutualCloseTxPhase2\x12,.remotesigner.SignMutualCloseTxPhase2Request\x1a#.remotesigner.CloseTxSignatureReply\x12\x61\n\x11\x43heckFutureSecret\x12&.remotesigner.CheckFutureSecretRequest\x1a$.remotesigner.CheckFutureSecretReply\x12j\n\x14GetChannelBasepoints\x12).remotesigner.GetChannelBasepointsRequest\x1a\'.remotesigner.GetChannelBasepointsReply\x12m\n\x15GetPerCommitmentPoint\x12*.remotesigner.GetPerCommitmentPointRequest\x1a(.remotesigner.GetPerCommitmentPointReply\x12U\n\rSignFundingTx\x12\".remotesigner.SignFundingTxRequest\x1a .remotesigner.SignFundingTxReply\x12\x63\n\x16SignRemoteCommitmentTx\x12+.remotesigner.SignRemoteCommitmentTxRequest\x1a\x1c.remotesigner.SignatureReply\x12{\n\x1cSignRemoteCommitmentTxPhase2\x12\x31.remotesigner.SignRemoteCommitmentTxPhase2Request\x1a(.remotesigner.CommitmentTxSignatureReply\x12W\n\x10SignCommitmentTx\x12%.remotesigner.SignCommitmentTxRequest\x1a\x1c.remotesigner.SignatureReply\x12y\n\x1bSignLocalCommitmentTxPhase2\x12\x30.remotesigner.SignLocalCommitmentTxPhase2Request\x1a(.remotesigner.CommitmentTxSignatureReply\x12U\n\x0fSignLocalHTLCTx\x12$.remotesigner.SignLocalHTLCTxRequest\x1a\x1c.remotesigner.SignatureReply\x12\x63\n\x16SignDelayedPaymentToUs\x12+.remotesigner.SignDelayedPaymentToUsRequest\x1a\x1c.remotesigner.SignatureReply\x12W\n\x10SignRemoteHTLCTx\x12%.remotesigner.SignRemoteHTLCTxRequest\x1a\x1c.remotesigner.SignatureReply\x12[\n\x12SignRemoteHTLCToUs\x12\'.remotesigner.SignRemoteHTLCToUsRequest\x1a\x1c.remotesigner.SignatureReply\x12U\n\x0fSignPenaltyToUs\x12$.remotesigner.SignPenaltyToUsRequest\x1a\x1c.remotesigner.SignatureReply\x12s\n\x17SignChannelAnnouncement\x12,.remotesigner.SignChannelAnnouncementRequest\x1a*.remotesigner.SignChannelAnnouncementReply\x12\x63\n\x14SignNodeAnnouncement\x12).remotesigner.SignNodeAnnouncementRequest\x1a .remotesigner.NodeSignatureReply\x12]\n\x11SignChannelUpdate\x12&.remotesigner.SignChannelUpdateRequest\x1a .remotesigner.NodeSignatureReply\x12:\n\x04\x45\x43\x44H\x12\x19.remotesigner.ECDHRequest\x1a\x17.remotesigner.ECDHReply\x12\\\n\x0bSignInvoice\x12 .remotesigner.SignInvoiceRequest\x1a+.remotesigner.RecoverableNodeSignatureReply\x12\\\n\x0bSignMessage\x12 .remotesigner.SignMessageRequest\x1a+.remotesigner.RecoverableNodeSignatureReply2N\n\x07Version\x12\x43\n\x07Version\x12\x1c.remotesigner.VersionRequest\x1a\x1a.remotesigner.VersionReplyb\x06proto3')
+  serialized_pb=_b('\n\x12remotesigner.proto\x12\x0cremotesigner\"\x1e\n\x0bPingRequest\x12\x0f\n\x07message\x18\x01 \x01(\t\"\x1c\n\tPingReply\x12\x0f\n\x07message\x18\x01 \x01(\t\"\xac\x01\n\x0bInitRequest\x12-\n\x0bnode_config\x18\x01 \x01(\x0b\x32\x18.remotesigner.NodeConfig\x12.\n\x0b\x63hainparams\x18\x02 \x01(\x0b\x32\x19.remotesigner.ChainParams\x12\x11\n\tcoldstart\x18\x03 \x01(\x08\x12+\n\nhsm_secret\x18\x64 \x01(\x0b\x32\x17.remotesigner.BIP32Seed\"2\n\tInitReply\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\"<\n\x13GetExtPubKeyRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\":\n\x11GetExtPubKeyReply\x12%\n\x04xpub\x18\x01 \x01(\x0b\x32\x17.remotesigner.ExtPubKey\"n\n\x11NewChannelRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x32\n\x0e\x63hannel_nonce0\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\"E\n\x0fNewChannelReply\x12\x32\n\x0e\x63hannel_nonce0\x18\x01 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\"\xe0\x04\n\x13ReadyChannelRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x32\n\x0e\x63hannel_nonce0\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x38\n\x14option_channel_nonce\x18\x03 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x13\n\x0bis_outbound\x18\x04 \x01(\x08\x12\x19\n\x11\x63hannel_value_sat\x18\x05 \x01(\x04\x12\x17\n\x0fpush_value_msat\x18\x06 \x01(\x04\x12\x30\n\x10\x66unding_outpoint\x18\x07 \x01(\x0b\x32\x16.remotesigner.Outpoint\x12\x1b\n\x13local_to_self_delay\x18\x08 \x01(\r\x12\x1d\n\x15local_shutdown_script\x18\t \x01(\x0c\x12\x33\n\x11remote_basepoints\x18\n \x01(\x0b\x32\x18.remotesigner.Basepoints\x12\x1c\n\x14remote_to_self_delay\x18\x0b \x01(\r\x12\x1e\n\x16remote_shutdown_script\x18\x0c \x01(\x0c\x12I\n\x0f\x63ommitment_type\x18\r \x01(\x0e\x32\x30.remotesigner.ReadyChannelRequest.CommitmentType\"?\n\x0e\x43ommitmentType\x12\n\n\x06LEGACY\x10\x00\x12\x14\n\x10STATIC_REMOTEKEY\x10\x01\x12\x0b\n\x07\x41NCHORS\x10\x02\"\x13\n\x11ReadyChannelReply\"\x9b\x01\n\x18SignMutualCloseTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\"C\n\x0eSignatureReply\x12\x31\n\tsignature\x18\x01 \x01(\x0b\x32\x1e.remotesigner.BitcoinSignature\"\xa8\x01\n\x18\x43heckFutureSecretRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\t\n\x01n\x18\x03 \x01(\x04\x12\'\n\tsuggested\x18\x04 \x01(\x0b\x32\x14.remotesigner.Secret\")\n\x16\x43heckFutureSecretReply\x12\x0f\n\x07\x63orrect\x18\x01 \x01(\x08\"w\n\x1bGetChannelBasepointsRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\"I\n\x19GetChannelBasepointsReply\x12,\n\nbasepoints\x18\x01 \x01(\x0b\x32\x18.remotesigner.Basepoints\"\x83\x01\n\x1cGetPerCommitmentPointRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\t\n\x01n\x18\x03 \x01(\x04\"z\n\x1aGetPerCommitmentPointReply\x12\x32\n\x14per_commitment_point\x18\x01 \x01(\x0b\x32\x14.remotesigner.PubKey\x12(\n\nold_secret\x18\x02 \x01(\x0b\x32\x14.remotesigner.Secret\"\x97\x01\n\x14SignFundingTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\">\n\x12SignFundingTxReply\x12(\n\twitnesses\x18\x01 \x03(\x0b\x32\x15.remotesigner.Witness\"\xd7\x01\n\x1dSignRemoteCommitmentTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x35\n\x17remote_per_commit_point\x18\x03 \x01(\x0b\x32\x14.remotesigner.PubKey\x12%\n\x02tx\x18\x04 \x01(\x0b\x32\x19.remotesigner.Transaction\"\x9a\x01\n\x17SignCommitmentTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\"\xd4\x01\n\x16SignLocalHTLCTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\x12\t\n\x01n\x18\x04 \x01(\x04\x12.\n\x10per_commit_point\x18\x05 \x01(\x0b\x32\x14.remotesigner.PubKey\"\xab\x01\n\x1dSignDelayedPaymentToUsRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\x12\t\n\x01n\x18\x04 \x01(\x04\"\xe0\x01\n\x17SignRemoteHTLCTxRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\x12\r\n\x05input\x18\x04 \x01(\r\x12\x35\n\x17remote_per_commit_point\x18\x05 \x01(\x0b\x32\x14.remotesigner.PubKey\"\xe2\x01\n\x19SignRemoteHTLCToUsRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\x12\r\n\x05input\x18\x04 \x01(\r\x12\x35\n\x17remote_per_commit_point\x18\x05 \x01(\x0b\x32\x14.remotesigner.PubKey\"\xd9\x01\n\x16SignPenaltyToUsRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12%\n\x02tx\x18\x03 \x01(\x0b\x32\x19.remotesigner.Transaction\x12\r\n\x05input\x18\x04 \x01(\r\x12/\n\x11revocation_secret\x18\x05 \x01(\x0b\x32\x14.remotesigner.Secret\"\x98\x01\n\x1eSignChannelAnnouncementRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x1c\n\x14\x63hannel_announcement\x18\x03 \x01(\x0c\"\x8d\x01\n\x1cSignChannelAnnouncementReply\x12\x34\n\x0enode_signature\x18\x01 \x01(\x0b\x32\x1c.remotesigner.ECDSASignature\x12\x37\n\x11\x62itcoin_signature\x18\x02 \x01(\x0b\x32\x1c.remotesigner.ECDSASignature\"_\n\x1bSignNodeAnnouncementRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x19\n\x11node_announcement\x18\x02 \x01(\x0c\"E\n\x12NodeSignatureReply\x12/\n\tsignature\x18\x01 \x01(\x0b\x32\x1c.remotesigner.ECDSASignature\"Y\n\x18SignChannelUpdateRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x16\n\x0e\x63hannel_update\x18\x02 \x01(\x0c\"Y\n\x0b\x45\x43\x44HRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12#\n\x05point\x18\x02 \x01(\x0b\x32\x14.remotesigner.PubKey\"8\n\tECDHReply\x12+\n\rshared_secret\x18\x01 \x01(\x0b\x32\x14.remotesigner.Secret\"k\n\x12SignInvoiceRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x11\n\tdata_part\x18\x02 \x01(\x0c\x12\x1b\n\x13human_readable_part\x18\x03 \x01(\t\"[\n\x1dRecoverableNodeSignatureReply\x12:\n\tsignature\x18\x01 \x01(\x0b\x32\'.remotesigner.ECDSARecoverableSignature\"L\n\x12SignMessageRequest\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x0f\n\x07message\x18\x02 \x01(\x0c\"\x10\n\x0eVersionRequest\"\x7f\n\x0cVersionReply\x12\x16\n\x0eversion_string\x18\x01 \x01(\t\x12\r\n\x05major\x18\x02 \x01(\r\x12\r\n\x05minor\x18\x03 \x01(\r\x12\r\n\x05patch\x18\x04 \x01(\r\x12\x12\n\nprerelease\x18\x05 \x01(\t\x12\x16\n\x0e\x62uild_metadata\x18\x06 \x01(\t\"\x8f\x01\n\nNodeConfig\x12I\n\x14key_derivation_style\x18\x01 \x01(\x0e\x32+.remotesigner.NodeConfig.KeyDerivationStyle\"6\n\x12KeyDerivationStyle\x12\x0b\n\x07INVALID\x10\x00\x12\n\n\x06NATIVE\x10\x01\x12\x07\n\x03LND\x10\x02\"#\n\x0b\x43hainParams\x12\x14\n\x0cnetwork_name\x18\x01 \x01(\t\"\x16\n\x06NodeId\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x1c\n\x0c\x43hannelNonce\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x16\n\x06PubKey\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x16\n\x06Secret\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x19\n\tBIP32Seed\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x8d\x01\n\x0bTransaction\x12\x14\n\x0craw_tx_bytes\x18\x01 \x01(\x0c\x12\x32\n\x0binput_descs\x18\x02 \x03(\x0b\x32\x1d.remotesigner.InputDescriptor\x12\x34\n\x0coutput_descs\x18\x03 \x03(\x0b\x32\x1e.remotesigner.OutputDescriptor\"\xde\x01\n\nBasepoints\x12(\n\nrevocation\x18\x01 \x01(\x0b\x32\x14.remotesigner.PubKey\x12%\n\x07payment\x18\x02 \x01(\x0b\x32\x14.remotesigner.PubKey\x12\"\n\x04htlc\x18\x03 \x01(\x0b\x32\x14.remotesigner.PubKey\x12-\n\x0f\x64\x65layed_payment\x18\x04 \x01(\x0b\x32\x14.remotesigner.PubKey\x12,\n\x0e\x66unding_pubkey\x18\x05 \x01(\x0b\x32\x14.remotesigner.PubKey\"\x1e\n\x0e\x45\x43\x44SASignature\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\")\n\x19\x45\x43\x44SARecoverableSignature\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\" \n\x10\x42itcoinSignature\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"\x1c\n\tExtPubKey\x12\x0f\n\x07\x65ncoded\x18\x01 \x01(\t\"x\n\x13UnilateralCloseInfo\x12\x31\n\rchannel_nonce\x18\x01 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12.\n\x10\x63ommitment_point\x18\x02 \x01(\x0b\x32\x14.remotesigner.PubKey\"U\n\nKeyLocator\x12\x10\n\x08key_path\x18\x01 \x03(\r\x12\x35\n\nclose_info\x18\x02 \x01(\x0b\x32!.remotesigner.UnilateralCloseInfo\"\x93\x01\n\x0fInputDescriptor\x12)\n\x07key_loc\x18\x01 \x01(\x0b\x32\x18.remotesigner.KeyLocator\x12\x11\n\tvalue_sat\x18\x02 \x01(\x03\x12+\n\nspend_type\x18\x03 \x01(\x0e\x32\x17.remotesigner.SpendType\x12\x15\n\rredeem_script\x18\x04 \x01(\x0c\"P\n\x10OutputDescriptor\x12)\n\x07key_loc\x18\x01 \x01(\x0b\x32\x18.remotesigner.KeyLocator\x12\x11\n\twitscript\x18\x02 \x01(\x0c\"b\n\x07Witness\x12\x31\n\tsignature\x18\x01 \x01(\x0b\x32\x1e.remotesigner.BitcoinSignature\x12$\n\x06pubkey\x18\x02 \x01(\x0b\x32\x14.remotesigner.PubKey\"\xb6\x01\n#SignRemoteCommitmentTxPhase2Request\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x35\n\x0f\x63ommitment_info\x18\x04 \x01(\x0b\x32\x1c.remotesigner.CommitmentInfo\"\xb5\x01\n\"SignLocalCommitmentTxPhase2Request\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x35\n\x0f\x63ommitment_info\x18\x04 \x01(\x0b\x32\x1c.remotesigner.CommitmentInfo\"\x88\x01\n\x1a\x43ommitmentTxSignatureReply\x12\x31\n\tsignature\x18\x01 \x01(\x0b\x32\x1e.remotesigner.BitcoinSignature\x12\x37\n\x0fhtlc_signatures\x18\x02 \x03(\x0b\x32\x1e.remotesigner.BitcoinSignature\"\xd3\x01\n\x1eSignMutualCloseTxPhase2Request\x12%\n\x07node_id\x18\x01 \x01(\x0b\x32\x14.remotesigner.NodeId\x12\x31\n\rchannel_nonce\x18\x02 \x01(\x0b\x32\x1a.remotesigner.ChannelNonce\x12\x1a\n\x12to_local_value_sat\x18\x03 \x01(\x04\x12\x1b\n\x13to_remote_value_sat\x18\x04 \x01(\x04\x12\x1e\n\x16remote_shutdown_script\x18\x05 \x01(\x0c\"J\n\x15\x43loseTxSignatureReply\x12\x31\n\tsignature\x18\x01 \x01(\x0b\x32\x1e.remotesigner.BitcoinSignature\"H\n\x08HTLCInfo\x12\x11\n\tvalue_sat\x18\x01 \x01(\x04\x12\x14\n\x0cpayment_hash\x18\x02 \x01(\x0c\x12\x13\n\x0b\x63ltv_expiry\x18\x03 \x01(\r\"\x83\x02\n\x0e\x43ommitmentInfo\x12\x1a\n\x12\x66\x65\x65rate_sat_per_kw\x18\x01 \x01(\r\x12\t\n\x01n\x18\x02 \x01(\x04\x12\x1a\n\x12to_local_value_sat\x18\x04 \x01(\x04\x12\x1b\n\x13to_remote_value_sat\x18\x05 \x01(\x04\x12\x32\n\x14per_commitment_point\x18\x06 \x01(\x0b\x32\x14.remotesigner.PubKey\x12-\n\roffered_htlcs\x18\n \x03(\x0b\x32\x16.remotesigner.HTLCInfo\x12.\n\x0ereceived_htlcs\x18\x0b \x03(\x0b\x32\x16.remotesigner.HTLCInfo\"\'\n\x08Outpoint\x12\x0c\n\x04txid\x18\x01 \x01(\x0c\x12\r\n\x05index\x18\x02 \x01(\r*@\n\tSpendType\x12\x0b\n\x07INVALID\x10\x00\x12\t\n\x05P2PKH\x10\x01\x12\n\n\x06P2WPKH\x10\x03\x12\x0f\n\x0bP2SH_P2WPKH\x10\x04\x32\x84\x13\n\x06Signer\x12:\n\x04Ping\x12\x19.remotesigner.PingRequest\x1a\x17.remotesigner.PingReply\x12:\n\x04Init\x12\x19.remotesigner.InitRequest\x1a\x17.remotesigner.InitReply\x12R\n\x0cGetExtPubKey\x12!.remotesigner.GetExtPubKeyRequest\x1a\x1f.remotesigner.GetExtPubKeyReply\x12L\n\nNewChannel\x12\x1f.remotesigner.NewChannelRequest\x1a\x1d.remotesigner.NewChannelReply\x12R\n\x0cReadyChannel\x12!.remotesigner.ReadyChannelRequest\x1a\x1f.remotesigner.ReadyChannelReply\x12Y\n\x11SignMutualCloseTx\x12&.remotesigner.SignMutualCloseTxRequest\x1a\x1c.remotesigner.SignatureReply\x12l\n\x17SignMutualCloseTxPhase2\x12,.remotesigner.SignMutualCloseTxPhase2Request\x1a#.remotesigner.CloseTxSignatureReply\x12\x61\n\x11\x43heckFutureSecret\x12&.remotesigner.CheckFutureSecretRequest\x1a$.remotesigner.CheckFutureSecretReply\x12j\n\x14GetChannelBasepoints\x12).remotesigner.GetChannelBasepointsRequest\x1a\'.remotesigner.GetChannelBasepointsReply\x12m\n\x15GetPerCommitmentPoint\x12*.remotesigner.GetPerCommitmentPointRequest\x1a(.remotesigner.GetPerCommitmentPointReply\x12U\n\rSignFundingTx\x12\".remotesigner.SignFundingTxRequest\x1a .remotesigner.SignFundingTxReply\x12\x63\n\x16SignRemoteCommitmentTx\x12+.remotesigner.SignRemoteCommitmentTxRequest\x1a\x1c.remotesigner.SignatureReply\x12{\n\x1cSignRemoteCommitmentTxPhase2\x12\x31.remotesigner.SignRemoteCommitmentTxPhase2Request\x1a(.remotesigner.CommitmentTxSignatureReply\x12W\n\x10SignCommitmentTx\x12%.remotesigner.SignCommitmentTxRequest\x1a\x1c.remotesigner.SignatureReply\x12y\n\x1bSignLocalCommitmentTxPhase2\x12\x30.remotesigner.SignLocalCommitmentTxPhase2Request\x1a(.remotesigner.CommitmentTxSignatureReply\x12U\n\x0fSignLocalHTLCTx\x12$.remotesigner.SignLocalHTLCTxRequest\x1a\x1c.remotesigner.SignatureReply\x12\x63\n\x16SignDelayedPaymentToUs\x12+.remotesigner.SignDelayedPaymentToUsRequest\x1a\x1c.remotesigner.SignatureReply\x12W\n\x10SignRemoteHTLCTx\x12%.remotesigner.SignRemoteHTLCTxRequest\x1a\x1c.remotesigner.SignatureReply\x12[\n\x12SignRemoteHTLCToUs\x12\'.remotesigner.SignRemoteHTLCToUsRequest\x1a\x1c.remotesigner.SignatureReply\x12U\n\x0fSignPenaltyToUs\x12$.remotesigner.SignPenaltyToUsRequest\x1a\x1c.remotesigner.SignatureReply\x12s\n\x17SignChannelAnnouncement\x12,.remotesigner.SignChannelAnnouncementRequest\x1a*.remotesigner.SignChannelAnnouncementReply\x12\x63\n\x14SignNodeAnnouncement\x12).remotesigner.SignNodeAnnouncementRequest\x1a .remotesigner.NodeSignatureReply\x12]\n\x11SignChannelUpdate\x12&.remotesigner.SignChannelUpdateRequest\x1a .remotesigner.NodeSignatureReply\x12:\n\x04\x45\x43\x44H\x12\x19.remotesigner.ECDHRequest\x1a\x17.remotesigner.ECDHReply\x12\\\n\x0bSignInvoice\x12 .remotesigner.SignInvoiceRequest\x1a+.remotesigner.RecoverableNodeSignatureReply\x12\\\n\x0bSignMessage\x12 .remotesigner.SignMessageRequest\x1a+.remotesigner.RecoverableNodeSignatureReply2N\n\x07Version\x12\x43\n\x07Version\x12\x1c.remotesigner.VersionRequest\x1a\x1a.remotesigner.VersionReplyb\x06proto3')
 )
 
 _SPENDTYPE = _descriptor.EnumDescriptor(
@@ -48,8 +48,8 @@ _SPENDTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7388,
-  serialized_end=7452,
+  serialized_start=7485,
+  serialized_end=7549,
 )
 _sym_db.RegisterEnumDescriptor(_SPENDTYPE)
 
@@ -59,6 +59,32 @@ P2PKH = 1
 P2WPKH = 3
 P2SH_P2WPKH = 4
 
+
+_READYCHANNELREQUEST_COMMITMENTTYPE = _descriptor.EnumDescriptor(
+  name='CommitmentType',
+  full_name='remotesigner.ReadyChannelRequest.CommitmentType',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='LEGACY', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='STATIC_REMOTEKEY', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ANCHORS', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1176,
+  serialized_end=1239,
+)
+_sym_db.RegisterEnumDescriptor(_READYCHANNELREQUEST_COMMITMENTTYPE)
 
 _NODECONFIG_KEYDERIVATIONSTYLE = _descriptor.EnumDescriptor(
   name='KeyDerivationStyle',
@@ -81,8 +107,8 @@ _NODECONFIG_KEYDERIVATIONSTYLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4871,
-  serialized_end=4925,
+  serialized_start=5039,
+  serialized_end=5093,
 )
 _sym_db.RegisterEnumDescriptor(_NODECONFIG_KEYDERIVATIONSTYLE)
 
@@ -309,7 +335,7 @@ _NEWCHANNELREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='channel_nonce', full_name='remotesigner.NewChannelRequest.channel_nonce', index=1,
+      name='channel_nonce0', full_name='remotesigner.NewChannelRequest.channel_nonce0', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -328,7 +354,7 @@ _NEWCHANNELREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=447,
-  serialized_end=556,
+  serialized_end=557,
 )
 
 
@@ -340,7 +366,7 @@ _NEWCHANNELREPLY = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='channel_nonce', full_name='remotesigner.NewChannelReply.channel_nonce', index=0,
+      name='channel_nonce0', full_name='remotesigner.NewChannelReply.channel_nonce0', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -358,8 +384,8 @@ _NEWCHANNELREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=558,
-  serialized_end=626,
+  serialized_start=559,
+  serialized_end=628,
 )
 
 
@@ -378,79 +404,86 @@ _READYCHANNELREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='channel_nonce', full_name='remotesigner.ReadyChannelRequest.channel_nonce', index=1,
+      name='channel_nonce0', full_name='remotesigner.ReadyChannelRequest.channel_nonce0', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='is_outbound', full_name='remotesigner.ReadyChannelRequest.is_outbound', index=2,
-      number=3, type=8, cpp_type=7, label=1,
+      name='option_channel_nonce', full_name='remotesigner.ReadyChannelRequest.option_channel_nonce', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='is_outbound', full_name='remotesigner.ReadyChannelRequest.is_outbound', index=3,
+      number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='channel_value_sat', full_name='remotesigner.ReadyChannelRequest.channel_value_sat', index=3,
-      number=4, type=4, cpp_type=4, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='push_value_msat', full_name='remotesigner.ReadyChannelRequest.push_value_msat', index=4,
+      name='channel_value_sat', full_name='remotesigner.ReadyChannelRequest.channel_value_sat', index=4,
       number=5, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='funding_outpoint', full_name='remotesigner.ReadyChannelRequest.funding_outpoint', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='local_to_self_delay', full_name='remotesigner.ReadyChannelRequest.local_to_self_delay', index=6,
-      number=7, type=13, cpp_type=3, label=1,
+      name='push_value_msat', full_name='remotesigner.ReadyChannelRequest.push_value_msat', index=5,
+      number=6, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='local_shutdown_script', full_name='remotesigner.ReadyChannelRequest.local_shutdown_script', index=7,
-      number=8, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='remote_basepoints', full_name='remotesigner.ReadyChannelRequest.remote_basepoints', index=8,
-      number=9, type=11, cpp_type=10, label=1,
+      name='funding_outpoint', full_name='remotesigner.ReadyChannelRequest.funding_outpoint', index=6,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='remote_to_self_delay', full_name='remotesigner.ReadyChannelRequest.remote_to_self_delay', index=9,
-      number=10, type=13, cpp_type=3, label=1,
+      name='local_to_self_delay', full_name='remotesigner.ReadyChannelRequest.local_to_self_delay', index=7,
+      number=8, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='remote_shutdown_script', full_name='remotesigner.ReadyChannelRequest.remote_shutdown_script', index=10,
-      number=11, type=12, cpp_type=9, label=1,
+      name='local_shutdown_script', full_name='remotesigner.ReadyChannelRequest.local_shutdown_script', index=8,
+      number=9, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='option_static_remotekey', full_name='remotesigner.ReadyChannelRequest.option_static_remotekey', index=11,
-      number=12, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='remote_basepoints', full_name='remotesigner.ReadyChannelRequest.remote_basepoints', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='remote_to_self_delay', full_name='remotesigner.ReadyChannelRequest.remote_to_self_delay', index=10,
+      number=11, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='remote_shutdown_script', full_name='remotesigner.ReadyChannelRequest.remote_shutdown_script', index=11,
+      number=12, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='commitment_type', full_name='remotesigner.ReadyChannelRequest.commitment_type', index=12,
+      number=13, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -459,6 +492,7 @@ _READYCHANNELREQUEST = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _READYCHANNELREQUEST_COMMITMENTTYPE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -466,8 +500,8 @@ _READYCHANNELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=629,
-  serialized_end=1071,
+  serialized_start=631,
+  serialized_end=1239,
 )
 
 
@@ -490,8 +524,8 @@ _READYCHANNELREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1073,
-  serialized_end=1092,
+  serialized_start=1241,
+  serialized_end=1260,
 )
 
 
@@ -535,8 +569,8 @@ _SIGNMUTUALCLOSETXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1095,
-  serialized_end=1250,
+  serialized_start=1263,
+  serialized_end=1418,
 )
 
 
@@ -566,8 +600,8 @@ _SIGNATUREREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1252,
-  serialized_end=1319,
+  serialized_start=1420,
+  serialized_end=1487,
 )
 
 
@@ -618,8 +652,8 @@ _CHECKFUTURESECRETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1322,
-  serialized_end=1490,
+  serialized_start=1490,
+  serialized_end=1658,
 )
 
 
@@ -649,8 +683,8 @@ _CHECKFUTURESECRETREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1492,
-  serialized_end=1533,
+  serialized_start=1660,
+  serialized_end=1701,
 )
 
 
@@ -687,8 +721,8 @@ _GETCHANNELBASEPOINTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1535,
-  serialized_end=1654,
+  serialized_start=1703,
+  serialized_end=1822,
 )
 
 
@@ -718,8 +752,8 @@ _GETCHANNELBASEPOINTSREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1656,
-  serialized_end=1729,
+  serialized_start=1824,
+  serialized_end=1897,
 )
 
 
@@ -763,8 +797,8 @@ _GETPERCOMMITMENTPOINTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1732,
-  serialized_end=1863,
+  serialized_start=1900,
+  serialized_end=2031,
 )
 
 
@@ -801,8 +835,8 @@ _GETPERCOMMITMENTPOINTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1865,
-  serialized_end=1987,
+  serialized_start=2033,
+  serialized_end=2155,
 )
 
 
@@ -846,8 +880,8 @@ _SIGNFUNDINGTXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1990,
-  serialized_end=2141,
+  serialized_start=2158,
+  serialized_end=2309,
 )
 
 
@@ -877,8 +911,8 @@ _SIGNFUNDINGTXREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2143,
-  serialized_end=2205,
+  serialized_start=2311,
+  serialized_end=2373,
 )
 
 
@@ -929,8 +963,8 @@ _SIGNREMOTECOMMITMENTTXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2208,
-  serialized_end=2423,
+  serialized_start=2376,
+  serialized_end=2591,
 )
 
 
@@ -974,8 +1008,8 @@ _SIGNCOMMITMENTTXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2426,
-  serialized_end=2580,
+  serialized_start=2594,
+  serialized_end=2748,
 )
 
 
@@ -1033,8 +1067,8 @@ _SIGNLOCALHTLCTXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2583,
-  serialized_end=2795,
+  serialized_start=2751,
+  serialized_end=2963,
 )
 
 
@@ -1085,8 +1119,8 @@ _SIGNDELAYEDPAYMENTTOUSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2798,
-  serialized_end=2969,
+  serialized_start=2966,
+  serialized_end=3137,
 )
 
 
@@ -1144,8 +1178,8 @@ _SIGNREMOTEHTLCTXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2972,
-  serialized_end=3196,
+  serialized_start=3140,
+  serialized_end=3364,
 )
 
 
@@ -1203,8 +1237,8 @@ _SIGNREMOTEHTLCTOUSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3199,
-  serialized_end=3425,
+  serialized_start=3367,
+  serialized_end=3593,
 )
 
 
@@ -1262,8 +1296,8 @@ _SIGNPENALTYTOUSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3428,
-  serialized_end=3645,
+  serialized_start=3596,
+  serialized_end=3813,
 )
 
 
@@ -1307,8 +1341,8 @@ _SIGNCHANNELANNOUNCEMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3648,
-  serialized_end=3800,
+  serialized_start=3816,
+  serialized_end=3968,
 )
 
 
@@ -1345,8 +1379,8 @@ _SIGNCHANNELANNOUNCEMENTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3803,
-  serialized_end=3944,
+  serialized_start=3971,
+  serialized_end=4112,
 )
 
 
@@ -1383,8 +1417,8 @@ _SIGNNODEANNOUNCEMENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3946,
-  serialized_end=4041,
+  serialized_start=4114,
+  serialized_end=4209,
 )
 
 
@@ -1414,8 +1448,8 @@ _NODESIGNATUREREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4043,
-  serialized_end=4112,
+  serialized_start=4211,
+  serialized_end=4280,
 )
 
 
@@ -1452,8 +1486,8 @@ _SIGNCHANNELUPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4114,
-  serialized_end=4203,
+  serialized_start=4282,
+  serialized_end=4371,
 )
 
 
@@ -1490,8 +1524,8 @@ _ECDHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4205,
-  serialized_end=4294,
+  serialized_start=4373,
+  serialized_end=4462,
 )
 
 
@@ -1521,8 +1555,8 @@ _ECDHREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4296,
-  serialized_end=4352,
+  serialized_start=4464,
+  serialized_end=4520,
 )
 
 
@@ -1566,8 +1600,8 @@ _SIGNINVOICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4354,
-  serialized_end=4461,
+  serialized_start=4522,
+  serialized_end=4629,
 )
 
 
@@ -1597,8 +1631,8 @@ _RECOVERABLENODESIGNATUREREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4463,
-  serialized_end=4554,
+  serialized_start=4631,
+  serialized_end=4722,
 )
 
 
@@ -1635,8 +1669,8 @@ _SIGNMESSAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4556,
-  serialized_end=4632,
+  serialized_start=4724,
+  serialized_end=4800,
 )
 
 
@@ -1659,8 +1693,8 @@ _VERSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4634,
-  serialized_end=4650,
+  serialized_start=4802,
+  serialized_end=4818,
 )
 
 
@@ -1725,8 +1759,8 @@ _VERSIONREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4652,
-  serialized_end=4779,
+  serialized_start=4820,
+  serialized_end=4947,
 )
 
 
@@ -1757,8 +1791,8 @@ _NODECONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4782,
-  serialized_end=4925,
+  serialized_start=4950,
+  serialized_end=5093,
 )
 
 
@@ -1788,8 +1822,8 @@ _CHAINPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4927,
-  serialized_end=4962,
+  serialized_start=5095,
+  serialized_end=5130,
 )
 
 
@@ -1819,8 +1853,8 @@ _NODEID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4964,
-  serialized_end=4986,
+  serialized_start=5132,
+  serialized_end=5154,
 )
 
 
@@ -1850,8 +1884,8 @@ _CHANNELNONCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4988,
-  serialized_end=5016,
+  serialized_start=5156,
+  serialized_end=5184,
 )
 
 
@@ -1881,8 +1915,8 @@ _PUBKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5018,
-  serialized_end=5040,
+  serialized_start=5186,
+  serialized_end=5208,
 )
 
 
@@ -1912,8 +1946,8 @@ _SECRET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5042,
-  serialized_end=5064,
+  serialized_start=5210,
+  serialized_end=5232,
 )
 
 
@@ -1943,8 +1977,8 @@ _BIP32SEED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5066,
-  serialized_end=5091,
+  serialized_start=5234,
+  serialized_end=5259,
 )
 
 
@@ -1988,8 +2022,8 @@ _TRANSACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5094,
-  serialized_end=5235,
+  serialized_start=5262,
+  serialized_end=5403,
 )
 
 
@@ -2047,8 +2081,8 @@ _BASEPOINTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5238,
-  serialized_end=5460,
+  serialized_start=5406,
+  serialized_end=5628,
 )
 
 
@@ -2078,8 +2112,8 @@ _ECDSASIGNATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5462,
-  serialized_end=5492,
+  serialized_start=5630,
+  serialized_end=5660,
 )
 
 
@@ -2109,8 +2143,8 @@ _ECDSARECOVERABLESIGNATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5494,
-  serialized_end=5535,
+  serialized_start=5662,
+  serialized_end=5703,
 )
 
 
@@ -2140,8 +2174,8 @@ _BITCOINSIGNATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5537,
-  serialized_end=5569,
+  serialized_start=5705,
+  serialized_end=5737,
 )
 
 
@@ -2171,77 +2205,8 @@ _EXTPUBKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5571,
-  serialized_end=5599,
-)
-
-
-_KEYLOCATOR = _descriptor.Descriptor(
-  name='KeyLocator',
-  full_name='remotesigner.KeyLocator',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key_index', full_name='remotesigner.KeyLocator.key_index', index=0,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=5601,
-  serialized_end=5632,
-)
-
-
-_TXOUT = _descriptor.Descriptor(
-  name='TxOut',
-  full_name='remotesigner.TxOut',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='value_sat', full_name='remotesigner.TxOut.value_sat', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='pk_script', full_name='remotesigner.TxOut.pk_script', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b(""),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=5634,
-  serialized_end=5679,
+  serialized_start=5739,
+  serialized_end=5767,
 )
 
 
@@ -2278,8 +2243,46 @@ _UNILATERALCLOSEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5681,
-  serialized_end=5801,
+  serialized_start=5769,
+  serialized_end=5889,
+)
+
+
+_KEYLOCATOR = _descriptor.Descriptor(
+  name='KeyLocator',
+  full_name='remotesigner.KeyLocator',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key_path', full_name='remotesigner.KeyLocator.key_path', index=0,
+      number=1, type=13, cpp_type=3, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='close_info', full_name='remotesigner.KeyLocator.close_info', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5891,
+  serialized_end=5976,
 )
 
 
@@ -2298,9 +2301,9 @@ _INPUTDESCRIPTOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='prev_output', full_name='remotesigner.InputDescriptor.prev_output', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='value_sat', full_name='remotesigner.InputDescriptor.value_sat', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -2312,15 +2315,8 @@ _INPUTDESCRIPTOR = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='close_info', full_name='remotesigner.InputDescriptor.close_info', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='redeem_script', full_name='remotesigner.InputDescriptor.redeem_script', index=4,
-      number=5, type=12, cpp_type=9, label=1,
+      name='redeem_script', full_name='remotesigner.InputDescriptor.redeem_script', index=3,
+      number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2337,8 +2333,8 @@ _INPUTDESCRIPTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5804,
-  serialized_end=6029,
+  serialized_start=5979,
+  serialized_end=6126,
 )
 
 
@@ -2375,8 +2371,8 @@ _OUTPUTDESCRIPTOR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6031,
-  serialized_end=6111,
+  serialized_start=6128,
+  serialized_end=6208,
 )
 
 
@@ -2413,8 +2409,8 @@ _WITNESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6113,
-  serialized_end=6211,
+  serialized_start=6210,
+  serialized_end=6308,
 )
 
 
@@ -2458,8 +2454,8 @@ _SIGNREMOTECOMMITMENTTXPHASE2REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6214,
-  serialized_end=6396,
+  serialized_start=6311,
+  serialized_end=6493,
 )
 
 
@@ -2503,8 +2499,8 @@ _SIGNLOCALCOMMITMENTTXPHASE2REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6399,
-  serialized_end=6580,
+  serialized_start=6496,
+  serialized_end=6677,
 )
 
 
@@ -2541,8 +2537,8 @@ _COMMITMENTTXSIGNATUREREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6583,
-  serialized_end=6719,
+  serialized_start=6680,
+  serialized_end=6816,
 )
 
 
@@ -2600,8 +2596,8 @@ _SIGNMUTUALCLOSETXPHASE2REQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6722,
-  serialized_end=6933,
+  serialized_start=6819,
+  serialized_end=7030,
 )
 
 
@@ -2631,8 +2627,8 @@ _CLOSETXSIGNATUREREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6935,
-  serialized_end=7009,
+  serialized_start=7032,
+  serialized_end=7106,
 )
 
 
@@ -2676,8 +2672,8 @@ _HTLCINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7011,
-  serialized_end=7083,
+  serialized_start=7108,
+  serialized_end=7180,
 )
 
 
@@ -2749,8 +2745,8 @@ _COMMITMENTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7086,
-  serialized_end=7345,
+  serialized_start=7183,
+  serialized_end=7442,
 )
 
 
@@ -2787,8 +2783,8 @@ _OUTPOINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7347,
-  serialized_end=7386,
+  serialized_start=7444,
+  serialized_end=7483,
 )
 
 _INITREQUEST.fields_by_name['node_config'].message_type = _NODECONFIG
@@ -2798,12 +2794,15 @@ _INITREPLY.fields_by_name['node_id'].message_type = _NODEID
 _GETEXTPUBKEYREQUEST.fields_by_name['node_id'].message_type = _NODEID
 _GETEXTPUBKEYREPLY.fields_by_name['xpub'].message_type = _EXTPUBKEY
 _NEWCHANNELREQUEST.fields_by_name['node_id'].message_type = _NODEID
-_NEWCHANNELREQUEST.fields_by_name['channel_nonce'].message_type = _CHANNELNONCE
-_NEWCHANNELREPLY.fields_by_name['channel_nonce'].message_type = _CHANNELNONCE
+_NEWCHANNELREQUEST.fields_by_name['channel_nonce0'].message_type = _CHANNELNONCE
+_NEWCHANNELREPLY.fields_by_name['channel_nonce0'].message_type = _CHANNELNONCE
 _READYCHANNELREQUEST.fields_by_name['node_id'].message_type = _NODEID
-_READYCHANNELREQUEST.fields_by_name['channel_nonce'].message_type = _CHANNELNONCE
+_READYCHANNELREQUEST.fields_by_name['channel_nonce0'].message_type = _CHANNELNONCE
+_READYCHANNELREQUEST.fields_by_name['option_channel_nonce'].message_type = _CHANNELNONCE
 _READYCHANNELREQUEST.fields_by_name['funding_outpoint'].message_type = _OUTPOINT
 _READYCHANNELREQUEST.fields_by_name['remote_basepoints'].message_type = _BASEPOINTS
+_READYCHANNELREQUEST.fields_by_name['commitment_type'].enum_type = _READYCHANNELREQUEST_COMMITMENTTYPE
+_READYCHANNELREQUEST_COMMITMENTTYPE.containing_type = _READYCHANNELREQUEST
 _SIGNMUTUALCLOSETXREQUEST.fields_by_name['node_id'].message_type = _NODEID
 _SIGNMUTUALCLOSETXREQUEST.fields_by_name['channel_nonce'].message_type = _CHANNELNONCE
 _SIGNMUTUALCLOSETXREQUEST.fields_by_name['tx'].message_type = _TRANSACTION
@@ -2872,10 +2871,9 @@ _BASEPOINTS.fields_by_name['delayed_payment'].message_type = _PUBKEY
 _BASEPOINTS.fields_by_name['funding_pubkey'].message_type = _PUBKEY
 _UNILATERALCLOSEINFO.fields_by_name['channel_nonce'].message_type = _CHANNELNONCE
 _UNILATERALCLOSEINFO.fields_by_name['commitment_point'].message_type = _PUBKEY
+_KEYLOCATOR.fields_by_name['close_info'].message_type = _UNILATERALCLOSEINFO
 _INPUTDESCRIPTOR.fields_by_name['key_loc'].message_type = _KEYLOCATOR
-_INPUTDESCRIPTOR.fields_by_name['prev_output'].message_type = _TXOUT
 _INPUTDESCRIPTOR.fields_by_name['spend_type'].enum_type = _SPENDTYPE
-_INPUTDESCRIPTOR.fields_by_name['close_info'].message_type = _UNILATERALCLOSEINFO
 _OUTPUTDESCRIPTOR.fields_by_name['key_loc'].message_type = _KEYLOCATOR
 _WITNESS.fields_by_name['signature'].message_type = _BITCOINSIGNATURE
 _WITNESS.fields_by_name['pubkey'].message_type = _PUBKEY
@@ -2945,9 +2943,8 @@ DESCRIPTOR.message_types_by_name['ECDSASignature'] = _ECDSASIGNATURE
 DESCRIPTOR.message_types_by_name['ECDSARecoverableSignature'] = _ECDSARECOVERABLESIGNATURE
 DESCRIPTOR.message_types_by_name['BitcoinSignature'] = _BITCOINSIGNATURE
 DESCRIPTOR.message_types_by_name['ExtPubKey'] = _EXTPUBKEY
-DESCRIPTOR.message_types_by_name['KeyLocator'] = _KEYLOCATOR
-DESCRIPTOR.message_types_by_name['TxOut'] = _TXOUT
 DESCRIPTOR.message_types_by_name['UnilateralCloseInfo'] = _UNILATERALCLOSEINFO
+DESCRIPTOR.message_types_by_name['KeyLocator'] = _KEYLOCATOR
 DESCRIPTOR.message_types_by_name['InputDescriptor'] = _INPUTDESCRIPTOR
 DESCRIPTOR.message_types_by_name['OutputDescriptor'] = _OUTPUTDESCRIPTOR
 DESCRIPTOR.message_types_by_name['Witness'] = _WITNESS
@@ -3326,26 +3323,19 @@ ExtPubKey = _reflection.GeneratedProtocolMessageType('ExtPubKey', (_message.Mess
   ))
 _sym_db.RegisterMessage(ExtPubKey)
 
-KeyLocator = _reflection.GeneratedProtocolMessageType('KeyLocator', (_message.Message,), dict(
-  DESCRIPTOR = _KEYLOCATOR,
-  __module__ = 'remotesigner_pb2'
-  # @@protoc_insertion_point(class_scope:remotesigner.KeyLocator)
-  ))
-_sym_db.RegisterMessage(KeyLocator)
-
-TxOut = _reflection.GeneratedProtocolMessageType('TxOut', (_message.Message,), dict(
-  DESCRIPTOR = _TXOUT,
-  __module__ = 'remotesigner_pb2'
-  # @@protoc_insertion_point(class_scope:remotesigner.TxOut)
-  ))
-_sym_db.RegisterMessage(TxOut)
-
 UnilateralCloseInfo = _reflection.GeneratedProtocolMessageType('UnilateralCloseInfo', (_message.Message,), dict(
   DESCRIPTOR = _UNILATERALCLOSEINFO,
   __module__ = 'remotesigner_pb2'
   # @@protoc_insertion_point(class_scope:remotesigner.UnilateralCloseInfo)
   ))
 _sym_db.RegisterMessage(UnilateralCloseInfo)
+
+KeyLocator = _reflection.GeneratedProtocolMessageType('KeyLocator', (_message.Message,), dict(
+  DESCRIPTOR = _KEYLOCATOR,
+  __module__ = 'remotesigner_pb2'
+  # @@protoc_insertion_point(class_scope:remotesigner.KeyLocator)
+  ))
+_sym_db.RegisterMessage(KeyLocator)
 
 InputDescriptor = _reflection.GeneratedProtocolMessageType('InputDescriptor', (_message.Message,), dict(
   DESCRIPTOR = _INPUTDESCRIPTOR,
@@ -3432,8 +3422,8 @@ _SIGNER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=7455,
-  serialized_end=9891,
+  serialized_start=7552,
+  serialized_end=9988,
   methods=[
   _descriptor.MethodDescriptor(
     name='Ping',
@@ -3681,8 +3671,8 @@ _VERSION = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=9893,
-  serialized_end=9971,
+  serialized_start=9990,
+  serialized_end=10068,
   methods=[
   _descriptor.MethodDescriptor(
     name='Version',
